@@ -1,0 +1,233 @@
+/* Renders the page from data/stats.json (or the identical data/stats.js
+   payload in window.SITE_STATS, which works from file:// too). */
+(function () {
+  'use strict';
+
+  var LANG_COLORS = {
+    'C#': '#178600', 'TypeScript': '#3178c6', 'JavaScript': '#c9a227',
+    'PHP': '#4f5d95', 'T-SQL': '#e38c00', 'C++': '#d1517a', 'C': '#6b7280',
+    'C/C++ Header': '#8a8f98', 'Kotlin': '#7f52ff', 'Python': '#3572a5',
+    'HTML': '#e34c26', 'CSS': '#663399', 'SCSS': '#c6538c', 'XAML': '#2c7d8c',
+    'Razor': '#5b8c5a', 'Shell': '#5da244', 'PowerShell': '#2b4a77',
+    'Batch': '#8a8f3a', 'Java': '#b07219', 'Go': '#00add8', 'Rust': '#dea584',
+    'Swift': '#f05138', 'Ruby': '#701516'
+  };
+  var FEATURED_ORDER = ['durable-execution-dotnet', 'redis-csharp',
+    'lsm-storage-engine', 'memcached-csharp', 'eso-agent'];
+  var DISPLAY_NAME = { 'eso-agent': 'EsoAgent' };
+  var SUBSITE = { 'eso-agent': 'https://seneso.github.io/eso-agent/' };
+
+  function fmt(n) { return n == null ? '—' : n.toLocaleString('en-US'); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function monthLabel(ym) {
+    var names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var p = ym.split('-');
+    return names[parseInt(p[1], 10) - 1] + ' ’' + p[0].slice(2);
+  }
+  function updatedLabel(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    return d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+  }
+
+  function badge(p) {
+    return p.visibility === 'Private'
+      ? '<span class="badge badge--private">Private</span>'
+      : '<span class="badge badge--public">Public</span>';
+  }
+
+  function langMix(p) {
+    if (!p.topLanguages || !p.topLanguages.length || !p.codeLines) return '';
+    var total = p.topLanguages.reduce(function (a, l) { return a + l.lines; }, 0);
+    var bars = p.topLanguages.map(function (l) {
+      var w = Math.max(2, (l.lines / total) * 100);
+      return '<span style="width:' + w + '%;background:' + (LANG_COLORS[l.name] || '#b6ab8e') + '" title="' + esc(l.name) + '"></span>';
+    }).join('');
+    var line = p.topLanguages.map(function (l) { return esc(l.name); }).join(' · ');
+    return '<div class="fcard__langs" aria-hidden="true">' + bars + '</div>' +
+           '<p class="fcard__langline">' + line + '</p>';
+  }
+
+  function featuredCard(p, i) {
+    var name = DISPLAY_NAME[p.name] || p.name;
+    var link = SUBSITE[p.name] || p.url;
+    var chips = [];
+    if (p.tests) chips.push('<span class="chip chip--gold">' + fmt(p.tests) + ' tests passing</span>');
+    if (p.license) chips.push('<span class="chip">' + esc(p.license) + '</span>');
+    if (p.codeLines != null) chips.push('<span class="chip">' + fmt(p.codeLines) + ' lines</span>');
+    if (p.treeLines && p.codeLines != null && p.treeLines > p.codeLines * 1.2) chips.push('<span class="chip">Full project tree: ' + fmt(p.treeLines) + ' lines incl. bundled libraries &amp; data</span>');
+    if (p.primaryLanguage) chips.push('<span class="chip chip--sage">' + esc(p.primaryLanguage) + '</span>');
+    chips.push(badge(p));
+    var cta = SUBSITE[p.name]
+      ? '<a class="fcard__cta" href="' + link + '">Visit the EsoAgent site →</a>'
+      : '<a class="fcard__cta" href="' + p.url + '" target="_blank" rel="noopener">View on GitHub →</a>';
+    return '<article class="fcard reveal' + (p.name === 'eso-agent' ? ' fcard--wide' : '') + '">' +
+      '<div class="fcard__top"><h3 class="fcard__name"><a href="' + link + '"' +
+        (SUBSITE[p.name] ? '' : ' target="_blank" rel="noopener"') + '>' + esc(name) + '</a></h3>' +
+        '<span class="fcard__no">№ ' + (i + 1) + '</span></div>' +
+      '<p class="fcard__summary">' + esc(p.summary) + '</p>' +
+      langMix(p) +
+      '<div class="fcard__meta">' + chips.join('') + '</div>' + cta +
+      '</article>';
+  }
+
+  function rowFor(p) {
+    var name = DISPLAY_NAME[p.name] || p.name;
+    var nameHtml = p.visibility === 'Private'
+      ? esc(name)
+      : '<a href="' + p.url + '" target="_blank" rel="noopener">' + esc(name) + '</a>';
+    var meta = [];
+    if (p.primaryLanguage) meta.push(esc(p.primaryLanguage));
+    if (p.codeLines != null) meta.push(fmt(p.codeLines) + ' lines');
+    if (p.treeLines && p.codeLines != null && p.treeLines > p.codeLines * 1.2) meta.push('full project tree ' + fmt(p.treeLines) + ' lines incl. bundled libraries & data');
+    if (p.updatedAt) meta.push('upd. ' + updatedLabel(p.updatedAt));
+    return '<div class="row reveal">' +
+      '<div class="row__name">' + nameHtml + '</div>' +
+      '<p class="row__summary">' + esc(p.summary || '—') + '</p>' +
+      '<div class="row__meta"><span>' + meta.join(' · ') + '</span>' + badge(p) + '</div>' +
+      '</div>';
+  }
+
+  function groupBlock(title, projects) {
+    if (!projects.length) return '';
+    return '<div class="group"><div class="group__head">' +
+      '<h3 class="group__title">' + esc(title) + '</h3>' +
+      '<span class="group__count">' + projects.length + '</span>' +
+      '<span class="group__rule"></span></div>' +
+      '<div class="rows">' + projects.map(rowFor).join('') + '</div></div>';
+  }
+
+  function render(stats) {
+    /* stat band */
+    document.querySelectorAll('[data-stat]').forEach(function (el) {
+      var key = el.getAttribute('data-stat');
+      el.textContent = fmt(stats.totals[key]);
+    });
+    var stamp = document.getElementById('updated-stamp');
+    if (stamp && stats.generatedAt) {
+      stamp.textContent = 'Last refreshed ' +
+        new Date(stats.generatedAt).toLocaleDateString('en-GB',
+          { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
+    }
+
+    var byName = {};
+    stats.projects.forEach(function (p) { byName[p.name] = p; });
+
+    /* featured */
+    var featured = FEATURED_ORDER.map(function (n) { return byName[n]; }).filter(Boolean);
+    document.getElementById('featured').innerHTML =
+      featured.map(featuredCard).join('');
+
+    /* index groups */
+    var rest = stats.projects.filter(function (p) {
+      return FEATURED_ORDER.indexOf(p.name) === -1;
+    });
+    var sdks = rest.filter(function (p) {
+      return /\.Net$/.test(p.name) ||
+        ['sqlserver-query-toolbox', 'csharp-design-patterns',
+         'aspnetcore-webapi-starter'].indexOf(p.name) !== -1;
+    });
+    var priv = rest.filter(function (p) { return p.group === 'private'; });
+    var course = rest.filter(function (p) { return p.group === 'course'; });
+    var used = {};
+    sdks.concat(priv, course).forEach(function (p) { used[p.name] = 1; });
+    var other = rest.filter(function (p) { return !used[p.name]; });
+    var byUpdated = function (a, b) { return (b.updatedAt || '').localeCompare(a.updatedAt || ''); };
+    document.getElementById('index-groups').innerHTML =
+      groupBlock('.NET SDKs & libraries', sdks.sort(byUpdated)) +
+      groupBlock('Private projects', priv.sort(byUpdated)) +
+      groupBlock('Applications & other work', other.sort(byUpdated)) +
+      groupBlock('Coursework — Route Academy', course.sort(byUpdated));
+
+    /* languages */
+    var lt = document.getElementById('langtable');
+    var maxPct = stats.languages.length ? stats.languages[0].pct : 0;
+    lt.innerHTML = stats.languages.map(function (l) {
+      return '<div class="langrow reveal">' +
+        '<div class="langrow__name"><span class="langrow__dot" style="background:' +
+          (LANG_COLORS[l.name] || '#b6ab8e') + '"></span>' + esc(l.name) + '</div>' +
+        '<div class="langrow__bar"><div class="langrow__fill" style="width:' +
+          Math.max(1.5, (l.pct / maxPct) * 100) + '%;background:' +
+          (LANG_COLORS[l.name] || '#b6ab8e') + '"></div></div>' +
+        '<div class="langrow__lines">' + fmt(l.lines) + '</div>' +
+        '<div class="langrow__pct">' + l.pct.toFixed(1) + '%</div></div>';
+    }).join('') +
+      '<div class="langtable__total"><span>Total</span><span>' +
+        fmt(stats.totals.codeLines) + ' lines</span></div>';
+
+    /* activity chart — last 18 months, zero-filled */
+    var byMonth = {};
+    stats.activity.monthlyCommits.forEach(function (m) { byMonth[m.month] = m.commits; });
+    var filled = [];
+    if (stats.activity.firstMonth && stats.activity.lastMonth) {
+      var cur = stats.activity.firstMonth.split('-').map(Number);
+      var end = stats.activity.lastMonth.split('-').map(Number);
+      while (cur[0] < end[0] || (cur[0] === end[0] && cur[1] <= end[1])) {
+        var key = cur[0] + '-' + String(cur[1]).padStart(2, '0');
+        filled.push({ month: key, commits: byMonth[key] || 0 });
+        cur[1]++; if (cur[1] === 13) { cur[1] = 1; cur[0]++; }
+      }
+    }
+    var months = filled.slice(-18);
+    var max = Math.max.apply(null, months.map(function (m) { return m.commits; }).concat([1]));
+    document.getElementById('chart').innerHTML = months.map(function (m) {
+      var h = Math.max(2, (m.commits / max) * 100);
+      return '<div class="chart__col" title="' + monthLabel(m.month) + ': ' + m.commits + ' commits">' +
+        '<div class="chart__bar" style="height:' + h + '%"></div>' +
+        '<span class="chart__label">' + monthLabel(m.month) + '</span></div>';
+    }).join('');
+    document.getElementById('chart-note').textContent =
+      fmt(stats.activity.totalCommits) + ' commits counted from ' +
+      monthLabel(stats.activity.firstMonth || '') + ' to ' +
+      monthLabel(stats.activity.lastMonth || '') +
+      ', across public repositories and local mirrors of the private ones.';
+
+    initReveal();
+    animateCounters();
+  }
+
+  function animateCounters() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-stat]').forEach(function (el) {
+      var target = parseInt(el.textContent.replace(/[^\d]/g, ''), 10);
+      if (!target || target < 100) return;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var t = Math.min(1, (ts - start) / 900);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))).toLocaleString('en-US');
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (e) { e.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+    /* Failsafe: nothing may stay hidden if observation misfires. */
+    setTimeout(function () {
+      els.forEach(function (e) { e.classList.add('is-in'); });
+    }, 2500);
+  }
+
+  if (window.SITE_STATS) {
+    render(window.SITE_STATS);
+  } else {
+    fetch('data/stats.json').then(function (r) { return r.json(); })
+      .then(render).catch(function () { /* data file missing — static content still reads fine */ });
+  }
+})();
