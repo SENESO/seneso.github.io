@@ -1,88 +1,113 @@
 {
- "generatedAt": "2026-11-18T13:56:55Z",
+ "generatedAt": "2026-11-18T17:42:54Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 50,
-  "public": 43,
+  "repositories": 61,
+  "public": 54,
   "private": 7,
-  "codeLines": 1164129,
-  "commits": 1571,
-  "languages": 15
+  "codeLines": 3584204,
+  "commits": 1875,
+  "languages": 20
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 721141,
-   "pct": 61.9
+   "lines": 2444212,
+   "pct": 68.2
+  },
+  {
+   "name": "Rust",
+   "lines": 242811,
+   "pct": 6.8
+  },
+  {
+   "name": "Kotlin",
+   "lines": 222464,
+   "pct": 6.2
   },
   {
    "name": "TypeScript",
-   "lines": 125686,
-   "pct": 10.8
+   "lines": 158184,
+   "pct": 4.4
   },
   {
    "name": "C++",
-   "lines": 107918,
-   "pct": 9.3
+   "lines": 141866,
+   "pct": 4.0
   },
   {
    "name": "PHP",
-   "lines": 69604,
-   "pct": 6.0
+   "lines": 70482,
+   "pct": 2.0
   },
   {
    "name": "C/C++ Header",
-   "lines": 53887,
-   "pct": 4.6
+   "lines": 69939,
+   "pct": 2.0
   },
   {
    "name": "Python",
-   "lines": 39683,
-   "pct": 3.4
+   "lines": 55227,
+   "pct": 1.5
+  },
+  {
+   "name": "Razor",
+   "lines": 44831,
+   "pct": 1.3
   },
   {
    "name": "JavaScript",
-   "lines": 27308,
-   "pct": 2.3
-  },
-  {
-   "name": "T-SQL",
-   "lines": 8196,
-   "pct": 0.7
-  },
-  {
-   "name": "HTML",
-   "lines": 4397,
-   "pct": 0.4
-  },
-  {
-   "name": "CSS",
-   "lines": 2209,
-   "pct": 0.2
+   "lines": 44265,
+   "pct": 1.2
   },
   {
    "name": "PowerShell",
-   "lines": 1589,
-   "pct": 0.1
+   "lines": 24640,
+   "pct": 0.7
+  },
+  {
+   "name": "CSS",
+   "lines": 14202,
+   "pct": 0.4
+  },
+  {
+   "name": "HTML",
+   "lines": 12354,
+   "pct": 0.3
+  },
+  {
+   "name": "Java",
+   "lines": 10690,
+   "pct": 0.3
+  },
+  {
+   "name": "T-SQL",
+   "lines": 9643,
+   "pct": 0.3
+  },
+  {
+   "name": "SCSS",
+   "lines": 7915,
+   "pct": 0.2
   },
   {
    "name": "Shell",
-   "lines": 1370,
-   "pct": 0.1
+   "lines": 7504,
+   "pct": 0.2
   },
   {
    "name": "Batch",
-   "lines": 438,
-   "pct": 0.0
-  },
-  {
-   "name": "C",
-   "lines": 435,
+   "lines": 1149,
    "pct": 0.0
   },
   {
    "name": "XAML",
-   "lines": 268,
+   "lines": 1067,
+   "pct": 0.0
+  },
+  {
+   "name": "C",
+   "lines": 759,
    "pct": 0.0
   }
  ],
@@ -97,12 +122,16 @@
     "commits": 2
    },
    {
-    "month": "2026-07",
+    "month": "2025-12",
     "commits": 6
    },
    {
+    "month": "2026-07",
+    "commits": 12
+   },
+   {
     "month": "2026-08",
-    "commits": 13
+    "commits": 24
    },
    {
     "month": "2026-09",
@@ -110,18 +139,49 @@
    },
    {
     "month": "2026-10",
-    "commits": 1361
+    "commits": 1701
    },
    {
     "month": "2026-11",
-    "commits": 174
+    "commits": 115
    }
   ],
-  "totalCommits": 1571,
+  "totalCommits": 1875,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11"
  },
  "projects": [
+  {
+   "name": "aspnetcore",
+   "url": "https://github.com/SENESO/aspnetcore",
+   "visibility": "Public",
+   "summary": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 1411572
+    },
+    {
+     "name": "Razor",
+     "lines": 42407
+    },
+    {
+     "name": "TypeScript",
+     "lines": 32498
+    }
+   ],
+   "codeLines": 1608835,
+   "treeLines": 2718598,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-18T06:59:38Z",
+   "updatedAt": "2026-10-18T06:59:38Z",
+   "group": "library"
+  },
   {
    "name": "aspnetcore-webapi-starter",
    "url": "https://github.com/SENESO/aspnetcore-webapi-starter",
@@ -135,6 +195,7 @@
     }
    ],
    "codeLines": 1124,
+   "treeLines": 1593,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -157,6 +218,7 @@
     }
    ],
    "codeLines": 1466,
+   "treeLines": 1756,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -179,6 +241,7 @@
     }
    ],
    "codeLines": 411,
+   "treeLines": 824,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -201,15 +264,16 @@
     },
     {
      "name": "T-SQL",
-     "lines": 2217
+     "lines": 2461
     },
     {
      "name": "Shell",
      "lines": 652
     }
    ],
-   "codeLines": 330231,
-   "locSource": "local-mirror",
+   "codeLines": 330475,
+   "treeLines": 1707974,
+   "locSource": "github-clone",
    "license": null,
    "tests": null,
    "stars": 0,
@@ -231,6 +295,7 @@
     }
    ],
    "codeLines": 812,
+   "treeLines": 975,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -238,6 +303,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T08:48:36Z",
    "updatedAt": "2026-10-13T22:54:52Z",
+   "group": "library"
+  },
+  {
+   "name": "Dapper",
+   "url": "https://github.com/SENESO/Dapper",
+   "visibility": "Public",
+   "summary": "Dapper - a simple object mapper for .Net",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 23433
+    },
+    {
+     "name": "PowerShell",
+     "lines": 36
+    },
+    {
+     "name": "HTML",
+     "lines": 3
+    }
+   ],
+   "codeLines": 23474,
+   "treeLines": 26371,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-08T16:43:37Z",
+   "updatedAt": "2026-10-08T16:43:38Z",
    "group": "library"
   },
   {
@@ -257,6 +353,7 @@
     }
    ],
    "codeLines": 10663,
+   "treeLines": 11673,
    "locSource": "github-clone",
    "license": "Apache-2.0",
    "tests": 524,
@@ -272,10 +369,16 @@
    "visibility": "Private",
    "summary": "Small .NET 8 EF Core differential query diagnostic prototype with SQLite and SQL Server integration tests",
    "primaryLanguage": "C#",
-   "topLanguages": [],
-   "codeLines": null,
-   "locSource": "unavailable",
-   "license": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 647
+    }
+   ],
+   "codeLines": 647,
+   "treeLines": 1777,
+   "locSource": "github-clone",
+   "license": "MIT",
    "tests": null,
    "stars": 0,
    "forks": 0,
@@ -296,6 +399,7 @@
     }
    ],
    "codeLines": 986,
+   "treeLines": 1220,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -303,6 +407,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T12:47:29Z",
    "updatedAt": "2026-10-13T22:40:53Z",
+   "group": "library"
+  },
+  {
+   "name": "eso-agent",
+   "url": "https://github.com/SENESO/eso-agent",
+   "visibility": "Public",
+   "summary": "EsoAgent — a fleet remote-administration platform of my own design: signed commands, a WireGuard mesh, remote desktop and software management for Windows and Linux machines, with a desktop app and an owner panel. It is the tool I operate my own devices with.",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 26286
+    },
+    {
+     "name": "HTML",
+     "lines": 1681
+    },
+    {
+     "name": "Python",
+     "lines": 589
+    }
+   ],
+   "codeLines": 29432,
+   "treeLines": 31323,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-18T16:34:19Z",
+   "updatedAt": "2026-11-18T17:04:37Z",
    "group": "library"
   },
   {
@@ -318,6 +453,7 @@
     }
    ],
    "codeLines": 2207,
+   "treeLines": 2572,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -340,6 +476,7 @@
     }
    ],
    "codeLines": 1514,
+   "treeLines": 1859,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -347,6 +484,64 @@
    "forks": 0,
    "createdAt": "2026-10-08T12:40:53Z",
    "updatedAt": "2026-10-13T22:39:47Z",
+   "group": "library"
+  },
+  {
+   "name": "fluentassertions",
+   "url": "https://github.com/SENESO/fluentassertions",
+   "visibility": "Public",
+   "summary": "A very extensive set of extension methods that allow you to more naturally specify the expected outcome of a TDD or BDD-style unit tests. Targets .NET Framework 4.7, as well as .NET Core 2.1, .NET Core 3.0, .NET 6, .NET Standard 2.0 and 2.1. Supports the unit test frameworks MSTest2, NUnit3, XUnit2, MSpec, and NSpec3.",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 123737
+    },
+    {
+     "name": "JavaScript",
+     "lines": 6124
+    },
+    {
+     "name": "SCSS",
+     "lines": 3937
+    }
+   ],
+   "codeLines": 136281,
+   "treeLines": 1249965,
+   "locSource": "github-clone",
+   "license": "See LICENSE",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-08T20:23:55Z",
+   "updatedAt": "2026-10-08T20:23:55Z",
+   "group": "library"
+  },
+  {
+   "name": "FluentEmail",
+   "url": "https://github.com/SENESO/FluentEmail",
+   "visibility": "Public",
+   "summary": "All in one email sender for .NET. Supports popular senders (SendGrid, MailGun, etc) and Razor templates.",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 4698
+    },
+    {
+     "name": "Razor",
+     "lines": 4
+    }
+   ],
+   "codeLines": 4702,
+   "treeLines": 5714,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-08T08:45:45Z",
+   "updatedAt": "2026-10-13T22:48:58Z",
    "group": "library"
   },
   {
@@ -362,6 +557,7 @@
     }
    ],
    "codeLines": 240,
+   "treeLines": 246,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -384,6 +580,7 @@
     }
    ],
    "codeLines": 264,
+   "treeLines": 266,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -406,6 +603,7 @@
     }
    ],
    "codeLines": 166,
+   "treeLines": 177,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -428,6 +626,7 @@
     }
    ],
    "codeLines": 347,
+   "treeLines": 358,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -450,6 +649,7 @@
     }
    ],
    "codeLines": 918,
+   "treeLines": 1867,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -472,6 +672,7 @@
     }
    ],
    "codeLines": 2330,
+   "treeLines": 2726,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -494,6 +695,7 @@
     }
    ],
    "codeLines": 2378,
+   "treeLines": 2386,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -516,6 +718,7 @@
     }
    ],
    "codeLines": 851,
+   "treeLines": 885,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -538,6 +741,7 @@
     }
    ],
    "codeLines": 179,
+   "treeLines": 242,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -560,6 +764,7 @@
     }
    ],
    "codeLines": 187,
+   "treeLines": 597,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -582,6 +787,7 @@
     }
    ],
    "codeLines": 108,
+   "treeLines": 495,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -604,6 +810,7 @@
     }
    ],
    "codeLines": 180,
+   "treeLines": 558,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -626,6 +833,7 @@
     }
    ],
    "codeLines": 10,
+   "treeLines": 383,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -648,6 +856,7 @@
     }
    ],
    "codeLines": 93,
+   "treeLines": 470,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -670,6 +879,7 @@
     }
    ],
    "codeLines": 314,
+   "treeLines": 352,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -692,6 +902,7 @@
     }
    ],
    "codeLines": 304,
+   "treeLines": 368,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -714,6 +925,7 @@
     }
    ],
    "codeLines": 463,
+   "treeLines": 1317,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -736,6 +948,7 @@
     }
    ],
    "codeLines": 432,
+   "treeLines": 465,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -758,6 +971,7 @@
     }
    ],
    "codeLines": 633,
+   "treeLines": 663,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -780,6 +994,7 @@
     }
    ],
    "codeLines": 1450,
+   "treeLines": 1715,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -787,6 +1002,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T17:20:03Z",
    "updatedAt": "2026-10-08T17:33:45Z",
+   "group": "library"
+  },
+  {
+   "name": "Hangfire",
+   "url": "https://github.com/SENESO/Hangfire",
+   "visibility": "Public",
+   "summary": "An easy way to perform background job processing in .NET and .NET Core applications. No Windows Service or separate process required",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 59697
+    },
+    {
+     "name": "Razor",
+     "lines": 2375
+    },
+    {
+     "name": "T-SQL",
+     "lines": 1203
+    }
+   ],
+   "codeLines": 65074,
+   "treeLines": 97327,
+   "locSource": "github-clone",
+   "license": "See LICENSE",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-19T06:53:29Z",
+   "updatedAt": "2026-10-19T06:53:30Z",
    "group": "library"
   },
   {
@@ -798,27 +1044,27 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 127294
+     "lines": 130420
     },
     {
      "name": "C++",
-     "lines": 99030
+     "lines": 102148
     },
     {
      "name": "PHP",
-     "lines": 59369
+     "lines": 60247
     }
    ],
-   "codeLines": 384861,
-   "locSource": "local-mirror",
+   "codeLines": 396118,
+   "treeLines": 1353436,
+   "locSource": "github-clone",
    "license": "GPL-3.0",
    "tests": null,
    "stars": 0,
    "forks": 0,
    "createdAt": "2026-10-23T08:29:47Z",
    "updatedAt": "2026-11-08T16:49:49Z",
-   "group": "private",
-   "treeLines": 1340188
+   "group": "private"
   },
   {
    "name": "ivmp-t4",
@@ -833,6 +1079,7 @@
     }
    ],
    "codeLines": 18,
+   "treeLines": 11015,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -855,6 +1102,7 @@
     }
    ],
    "codeLines": 6319,
+   "treeLines": 7039,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 117,
@@ -885,7 +1133,8 @@
     }
    ],
    "codeLines": 192921,
-   "locSource": "local-mirror",
+   "treeLines": 433570,
+   "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
    "stars": 0,
@@ -900,10 +1149,24 @@
    "visibility": "Private",
    "summary": "Mandarin — Android music player maintained by SENESO. Private alpha; GPL-3.0 and upstream credits preserved.",
    "primaryLanguage": "Kotlin",
-   "topLanguages": [],
-   "codeLines": null,
-   "locSource": "unavailable",
-   "license": null,
+   "topLanguages": [
+    {
+     "name": "Kotlin",
+     "lines": 222464
+    },
+    {
+     "name": "C++",
+     "lines": 1573
+    },
+    {
+     "name": "Python",
+     "lines": 693
+    }
+   ],
+   "codeLines": 225183,
+   "treeLines": 296117,
+   "locSource": "github-clone",
+   "license": "GPL-3.0",
    "tests": null,
    "stars": 0,
    "forks": 0,
@@ -919,6 +1182,7 @@
    "primaryLanguage": null,
    "topLanguages": [],
    "codeLines": 0,
+   "treeLines": 92,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -941,6 +1205,7 @@
     }
    ],
    "codeLines": 2153,
+   "treeLines": 2699,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 66,
@@ -949,6 +1214,37 @@
    "createdAt": "2026-11-07T12:37:06Z",
    "updatedAt": "2026-11-07T14:01:57Z",
    "group": "featured"
+  },
+  {
+   "name": "NetSparkle",
+   "url": "https://github.com/SENESO/NetSparkle",
+   "visibility": "Public",
+   "summary": "NetSparkle is a C#, cross-platform, highly-configurable software update framework with pre-built UI for .NET developers compatible with .NET 4.6.2/.NET 6+, WinForms, WPF, and Avalonia; uses Ed25519 signatures. View basic usage here in the README and try the samples for yourself.",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 22981
+    },
+    {
+     "name": "XAML",
+     "lines": 799
+    },
+    {
+     "name": "CSS",
+     "lines": 513
+    }
+   ],
+   "codeLines": 24528,
+   "treeLines": 50133,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-08T09:16:49Z",
+   "updatedAt": "2026-10-08T09:16:50Z",
+   "group": "library"
   },
   {
    "name": "notion-clone",
@@ -971,6 +1267,7 @@
     }
    ],
    "codeLines": 9747,
+   "treeLines": 22097,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -993,6 +1290,7 @@
     }
    ],
    "codeLines": 1344,
+   "treeLines": 7081,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1000,6 +1298,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T12:22:50Z",
    "updatedAt": "2026-10-13T22:50:29Z",
+   "group": "library"
+  },
+  {
+   "name": "pdfcraft",
+   "url": "https://github.com/SENESO/pdfcraft",
+   "visibility": "Public",
+   "summary": "PdfCraft: An open-source PDF reader and editor written by scratch in pure Rust",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "Rust",
+     "lines": 242811
+    },
+    {
+     "name": "HTML",
+     "lines": 782
+    },
+    {
+     "name": "Shell",
+     "lines": 728
+    }
+   ],
+   "codeLines": 245030,
+   "treeLines": 497167,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-18T06:57:31Z",
+   "updatedAt": "2026-10-18T06:57:31Z",
    "group": "library"
   },
   {
@@ -1023,6 +1352,7 @@
     }
    ],
    "codeLines": 13961,
+   "treeLines": 14640,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 219,
@@ -1045,7 +1375,8 @@
     }
    ],
    "codeLines": 36748,
-   "locSource": "local-mirror",
+   "treeLines": 51238,
+   "locSource": "github-clone",
    "license": null,
    "tests": null,
    "stars": 0,
@@ -1062,6 +1393,7 @@
    "primaryLanguage": null,
    "topLanguages": [],
    "codeLines": 0,
+   "treeLines": 71,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -1069,6 +1401,37 @@
    "forks": 0,
    "createdAt": "2023-06-29T17:35:59Z",
    "updatedAt": "2026-10-08T18:41:30Z",
+   "group": "library"
+  },
+  {
+   "name": "seneso.github.io",
+   "url": "https://github.com/SENESO/seneso.github.io",
+   "visibility": "Public",
+   "summary": "",
+   "primaryLanguage": "CSS",
+   "topLanguages": [
+    {
+     "name": "CSS",
+     "lines": 319
+    },
+    {
+     "name": "Python",
+     "lines": 303
+    },
+    {
+     "name": "HTML",
+     "lines": 248
+    }
+   ],
+   "codeLines": 1087,
+   "treeLines": 2436,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-18T16:34:43Z",
+   "updatedAt": "2026-11-18T17:04:43Z",
    "group": "library"
   },
   {
@@ -1088,6 +1451,7 @@
     }
    ],
    "codeLines": 1896,
+   "treeLines": 22508,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1095,6 +1459,33 @@
    "forks": 0,
    "createdAt": "2025-04-11T12:49:42Z",
    "updatedAt": "2026-10-08T12:08:40Z",
+   "group": "library"
+  },
+  {
+   "name": "spectre.console",
+   "url": "https://github.com/SENESO/spectre.console",
+   "visibility": "Public",
+   "summary": "A .NET library that makes it easier to create beautiful console applications.",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 41395
+    },
+    {
+     "name": "PowerShell",
+     "lines": 62
+    }
+   ],
+   "codeLines": 41457,
+   "treeLines": 159412,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-08T19:15:34Z",
+   "updatedAt": "2026-10-08T19:15:35Z",
    "group": "library"
   },
   {
@@ -1118,7 +1509,8 @@
     }
    ],
    "codeLines": 101924,
-   "locSource": "local-mirror",
+   "treeLines": 170278,
+   "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
    "stars": 0,
@@ -1140,6 +1532,7 @@
     }
    ],
    "codeLines": 480,
+   "treeLines": 568,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1147,6 +1540,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T08:48:17Z",
    "updatedAt": "2026-10-13T22:54:55Z",
+   "group": "library"
+  },
+  {
+   "name": "Swashbuckle.AspNetCore",
+   "url": "https://github.com/SENESO/Swashbuckle.AspNetCore",
+   "visibility": "Public",
+   "summary": "Swagger tools for documenting API's built on ASP.NET Core",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 31245
+    },
+    {
+     "name": "PowerShell",
+     "lines": 244
+    },
+    {
+     "name": "JavaScript",
+     "lines": 98
+    }
+   ],
+   "codeLines": 31736,
+   "treeLines": 124964,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-10-09T05:20:23Z",
+   "updatedAt": "2026-10-09T05:20:23Z",
    "group": "library"
   },
   {
@@ -1162,6 +1586,7 @@
     }
    ],
    "codeLines": 1406,
+   "treeLines": 1667,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1184,6 +1609,7 @@
     }
    ],
    "codeLines": 6128,
+   "treeLines": 11355,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1206,6 +1632,7 @@
     }
    ],
    "codeLines": 1752,
+   "treeLines": 7318,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1232,6 +1659,7 @@
     }
    ],
    "codeLines": 10345,
+   "treeLines": 11408,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -1254,6 +1682,7 @@
     }
    ],
    "codeLines": 1973,
+   "treeLines": 2340,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1262,36 +1691,6 @@
    "createdAt": "2026-10-08T12:44:01Z",
    "updatedAt": "2026-10-13T22:40:06Z",
    "group": "library"
-  },
-  {
-   "name": "eso-agent",
-   "url": "https://github.com/SENESO/eso-agent",
-   "visibility": "Public",
-   "summary": "EsoAgent — a fleet remote-administration platform of my own design: signed commands, a WireGuard mesh, remote desktop and software management for Windows and Linux machines, with a desktop app and an owner panel. It is the tool I operate my own devices with.",
-   "primaryLanguage": "C#",
-   "topLanguages": [
-    {
-     "name": "C#",
-     "lines": 25746
-    },
-    {
-     "name": "HTML",
-     "lines": 1681
-    },
-    {
-     "name": "Python",
-     "lines": 589
-    }
-   ],
-   "codeLines": 28892,
-   "locSource": "local-source",
-   "license": "MIT",
-   "tests": 101,
-   "stars": 0,
-   "forks": 0,
-   "createdAt": "2026-11-18T00:00:00Z",
-   "updatedAt": "2026-11-18T00:00:00Z",
-   "group": "featured"
   }
  ]
 }
