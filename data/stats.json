@@ -1,13 +1,14 @@
 {
- "generatedAt": "2026-11-19T09:59:39Z",
+ "generatedAt": "2026-11-19T10:02:48Z",
  "owner": "SENESO",
  "totals": {
   "repositories": 61,
   "public": 54,
   "private": 7,
-  "codeLines": 3374799,
-  "commits": 1886,
-  "languages": 22
+  "codeLines": 3374866,
+  "commits": 1887,
+  "languages": 22,
+  "mergedPRs": 5
  },
  "languages": [
   {
@@ -42,12 +43,12 @@
   },
   {
    "name": "Python",
-   "lines": 60612,
+   "lines": 60658,
    "pct": 1.8
   },
   {
    "name": "JavaScript",
-   "lines": 44951,
+   "lines": 44972,
    "pct": 1.3
   },
   {
@@ -153,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 126
+    "commits": 127
    }
   ],
   "dailyCommits": [
@@ -371,10 +372,10 @@
    },
    {
     "date": "2026-11-19",
-    "commits": 5
+    "commits": 6
    }
   ],
-  "totalCommits": 1886,
+  "totalCommits": 1887,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
@@ -1646,15 +1647,15 @@
     },
     {
      "name": "Python",
-     "lines": 327
+     "lines": 373
     },
     {
      "name": "JavaScript",
-     "lines": 324
+     "lines": 345
     }
    ],
-   "codeLines": 1321,
-   "treeLines": 3070,
+   "codeLines": 1388,
+   "treeLines": 3367,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
@@ -1921,6 +1922,48 @@
    "createdAt": "2026-10-08T12:44:01Z",
    "updatedAt": "2026-10-13T22:40:06Z",
    "group": "library"
+  }
+ ],
+ "openSource": [
+  {
+   "project": "NetSparkle",
+   "repo": "NetSparkleUpdater/NetSparkle",
+   "number": 743,
+   "title": "Return non-zero exit codes on errors in netsparkle-generate-appcast (fixes #740)",
+   "url": "https://github.com/NetSparkleUpdater/NetSparkle/pull/743",
+   "note": null
+  },
+  {
+   "project": "NetSparkle",
+   "repo": "NetSparkleUpdater/NetSparkle",
+   "number": 744,
+   "title": "Add custom HTTP headers support to appcast downloads (fixes #640)",
+   "url": "https://github.com/NetSparkleUpdater/NetSparkle/pull/744",
+   "note": null
+  },
+  {
+   "project": "fluentassertions",
+   "repo": "fluentassertions/fluentassertions",
+   "number": 3363,
+   "title": "Add BeOrderedBy overload with SortOrder direction",
+   "url": "https://github.com/fluentassertions/fluentassertions/pull/3363",
+   "note": null
+  },
+  {
+   "project": "fluentassertions",
+   "repo": "fluentassertions/fluentassertions",
+   "number": 3364,
+   "title": "Improve IValueFormatter docs and add dictionary-value regression test",
+   "url": "https://github.com/fluentassertions/fluentassertions/pull/3364",
+   "note": null
+  },
+  {
+   "project": "Swashbuckle.AspNetCore",
+   "repo": "domaindrivendev/Swashbuckle.AspNetCore",
+   "number": 4209,
+   "title": "Fix AmbiguousMatchException for [FromQuery]",
+   "url": "https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/4209",
+   "note": "shipped in v10.3.1"
   }
  ]
 }
