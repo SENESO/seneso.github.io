@@ -188,6 +188,49 @@ def git_days(root):
         return {}
 
 
+# Curated release notes for specific upstream PRs (the only hand-kept part
+# of the open-source record — everything else is fetched live).
+PR_NOTES = {
+    ('domaindrivendev/Swashbuckle.AspNetCore', 4209): 'shipped in v10.3.1',
+}
+
+
+def fetch_merged_prs(token):
+    """Upstream PRs authored by the owner and merged into repositories he
+    does not own — fetched from the GitHub Search API so the site's
+    open-source section maintains itself."""
+    prs, page = [], 1
+    while True:
+        q = 'type:pr+author:' + OWNER + '+is:merged'
+        url = (f'https://api.github.com/search/issues?q={q}'
+               f'&per_page=100&page={page}&sort=created&order=asc')
+        req = urllib.request.Request(url, headers={
+            'Accept': 'application/vnd.github+json',
+            'Authorization': f'Bearer {token}',
+            'User-Agent': 'profile-site-stats'})
+        with urllib.request.urlopen(req) as r:
+            data = json.load(r)
+        items = data.get('items', [])
+        if not items:
+            break
+        for it in items:
+            repo_full = (it.get('repository_url') or '').rsplit('/repos/', 1)[-1]
+            if repo_full.split('/')[0].lower() == OWNER.lower():
+                continue  # his own repositories are projects, not upstream PRs
+            prs.append({
+                'project': repo_full.split('/')[-1],
+                'repo': repo_full,
+                'number': it.get('number'),
+                'title': it.get('title') or '',
+                'url': it.get('html_url'),
+                'note': PR_NOTES.get((repo_full, it.get('number'))),
+            })
+        if len(items) < 100:
+            break
+        page += 1
+    return prs
+
+
 def fetch_repos_api(token):
     repos, page = [], 1
     while True:
@@ -339,6 +382,14 @@ def main():
         },
         'projects': projects,
     }
+    if token and not args.repos_json:
+        try:
+            prs = fetch_merged_prs(token)
+            stats['openSource'] = prs
+            stats['totals']['mergedPRs'] = len(prs)
+        except Exception:
+            pass  # the page keeps its static open-source list as fallback
+
     out = os.path.abspath(args.out)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, 'w') as f:

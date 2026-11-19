@@ -240,6 +240,7 @@
     /* stat band */
     document.querySelectorAll('[data-stat]').forEach(function (el) {
       var key = el.getAttribute('data-stat');
+      if (stats.totals[key] == null) return; /* keep the static fallback value */
       el.textContent = fmt(stats.totals[key]);
     });
     var stamp = document.getElementById('updated-stamp');
@@ -293,6 +294,27 @@
     }).join('') +
       '<div class="langtable__total"><span>Total</span><span>' +
         fmt(stats.totals.codeLines) + ' lines</span></div>';
+
+    /* open source — rendered live from the fetched merged-PR list when
+       present; the static HTML list stays as the fallback */
+    var prsList = document.getElementById('prs-list');
+    if (prsList && stats.openSource && stats.openSource.length) {
+      var PR_DISPLAY = { 'fluentassertions': 'FluentAssertions' };
+      prsList.innerHTML = stats.openSource.map(function (pr) {
+        var project = PR_DISPLAY[pr.project] || pr.project;
+        var title = esc(pr.title) + (pr.note ? ' — ' + esc(pr.note) : '');
+        return '<li class="prs__row">' +
+          '<div class="prs__main">' +
+            '<p class="prs__project">' + esc(project) +
+              ' <span class="prs__repo">' + esc(pr.repo) + '</span></p>' +
+            '<a class="prs__title" href="' + esc(pr.url) +
+              '" target="_blank" rel="noopener">' + title + '</a>' +
+          '</div>' +
+          '<span class="prs__no">#' + pr.number + '</span>' +
+          '<span class="badge badge--merged">Merged</span>' +
+        '</li>';
+      }).join('');
+    }
 
     /* activity — GitHub-style contribution board from daily data,
        with the monthly bar chart as fallback for older data files */
