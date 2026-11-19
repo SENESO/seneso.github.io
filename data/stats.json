@@ -1,54 +1,54 @@
 {
- "generatedAt": "2026-11-18T17:42:54Z",
+ "generatedAt": "2026-11-19T09:59:39Z",
  "owner": "SENESO",
  "totals": {
   "repositories": 61,
   "public": 54,
   "private": 7,
-  "codeLines": 3584204,
-  "commits": 1875,
-  "languages": 20
+  "codeLines": 3374799,
+  "commits": 1886,
+  "languages": 22
  },
  "languages": [
   {
    "name": "C#",
    "lines": 2444212,
-   "pct": 68.2
+   "pct": 72.4
   },
   {
    "name": "Rust",
    "lines": 242811,
-   "pct": 6.8
-  },
-  {
-   "name": "Kotlin",
-   "lines": 222464,
-   "pct": 6.2
+   "pct": 7.2
   },
   {
    "name": "TypeScript",
    "lines": 158184,
-   "pct": 4.4
+   "pct": 4.7
   },
   {
    "name": "C++",
-   "lines": 141866,
-   "pct": 4.0
+   "lines": 141129,
+   "pct": 4.2
   },
   {
    "name": "PHP",
    "lines": 70482,
-   "pct": 2.0
+   "pct": 2.1
   },
   {
    "name": "C/C++ Header",
-   "lines": 69939,
-   "pct": 2.0
+   "lines": 69972,
+   "pct": 2.1
   },
   {
    "name": "Python",
-   "lines": 55227,
-   "pct": 1.5
+   "lines": 60612,
+   "pct": 1.8
+  },
+  {
+   "name": "JavaScript",
+   "lines": 44951,
+   "pct": 1.3
   },
   {
    "name": "Razor",
@@ -56,24 +56,19 @@
    "pct": 1.3
   },
   {
-   "name": "JavaScript",
-   "lines": 44265,
-   "pct": 1.2
-  },
-  {
    "name": "PowerShell",
-   "lines": 24640,
+   "lines": 24652,
    "pct": 0.7
   },
   {
    "name": "CSS",
-   "lines": 14202,
+   "lines": 14293,
    "pct": 0.4
   },
   {
    "name": "HTML",
-   "lines": 12354,
-   "pct": 0.3
+   "lines": 12291,
+   "pct": 0.4
   },
   {
    "name": "Java",
@@ -92,12 +87,22 @@
   },
   {
    "name": "Shell",
-   "lines": 7504,
+   "lines": 7799,
    "pct": 0.2
   },
   {
+   "name": "Kotlin",
+   "lines": 5645,
+   "pct": 0.2
+  },
+  {
+   "name": "Swift",
+   "lines": 1744,
+   "pct": 0.1
+  },
+  {
    "name": "Batch",
-   "lines": 1149,
+   "lines": 1085,
    "pct": 0.0
   },
   {
@@ -108,6 +113,11 @@
   {
    "name": "C",
    "lines": 759,
+   "pct": 0.0
+  },
+  {
+   "name": "Ruby",
+   "lines": 32,
    "pct": 0.0
   }
  ],
@@ -143,12 +153,232 @@
    },
    {
     "month": "2026-11",
-    "commits": 115
+    "commits": 126
    }
   ],
-  "totalCommits": 1875,
+  "dailyCommits": [
+   {
+    "date": "2025-03-17",
+    "commits": 2
+   },
+   {
+    "date": "2025-03-18",
+    "commits": 2
+   },
+   {
+    "date": "2025-03-21",
+    "commits": 2
+   },
+   {
+    "date": "2025-04-11",
+    "commits": 2
+   },
+   {
+    "date": "2025-12-26",
+    "commits": 6
+   },
+   {
+    "date": "2026-07-18",
+    "commits": 1
+   },
+   {
+    "date": "2026-07-20",
+    "commits": 3
+   },
+   {
+    "date": "2026-07-22",
+    "commits": 1
+   },
+   {
+    "date": "2026-07-28",
+    "commits": 4
+   },
+   {
+    "date": "2026-07-29",
+    "commits": 3
+   },
+   {
+    "date": "2026-08-03",
+    "commits": 5
+   },
+   {
+    "date": "2026-08-11",
+    "commits": 9
+   },
+   {
+    "date": "2026-08-12",
+    "commits": 1
+   },
+   {
+    "date": "2026-08-20",
+    "commits": 7
+   },
+   {
+    "date": "2026-08-26",
+    "commits": 1
+   },
+   {
+    "date": "2026-08-27",
+    "commits": 1
+   },
+   {
+    "date": "2026-09-02",
+    "commits": 1
+   },
+   {
+    "date": "2026-09-03",
+    "commits": 6
+   },
+   {
+    "date": "2026-09-17",
+    "commits": 2
+   },
+   {
+    "date": "2026-10-04",
+    "commits": 42
+   },
+   {
+    "date": "2026-10-08",
+    "commits": 183
+   },
+   {
+    "date": "2026-10-09",
+    "commits": 13
+   },
+   {
+    "date": "2026-10-10",
+    "commits": 1
+   },
+   {
+    "date": "2026-10-11",
+    "commits": 4
+   },
+   {
+    "date": "2026-10-12",
+    "commits": 2
+   },
+   {
+    "date": "2026-10-13",
+    "commits": 12
+   },
+   {
+    "date": "2026-10-14",
+    "commits": 35
+   },
+   {
+    "date": "2026-10-15",
+    "commits": 49
+   },
+   {
+    "date": "2026-10-16",
+    "commits": 91
+   },
+   {
+    "date": "2026-10-17",
+    "commits": 109
+   },
+   {
+    "date": "2026-10-18",
+    "commits": 38
+   },
+   {
+    "date": "2026-10-19",
+    "commits": 7
+   },
+   {
+    "date": "2026-10-20",
+    "commits": 24
+   },
+   {
+    "date": "2026-10-21",
+    "commits": 12
+   },
+   {
+    "date": "2026-10-23",
+    "commits": 48
+   },
+   {
+    "date": "2026-10-24",
+    "commits": 286
+   },
+   {
+    "date": "2026-10-25",
+    "commits": 111
+   },
+   {
+    "date": "2026-10-27",
+    "commits": 66
+   },
+   {
+    "date": "2026-10-28",
+    "commits": 277
+   },
+   {
+    "date": "2026-10-29",
+    "commits": 209
+   },
+   {
+    "date": "2026-10-30",
+    "commits": 69
+   },
+   {
+    "date": "2026-10-31",
+    "commits": 13
+   },
+   {
+    "date": "2026-11-02",
+    "commits": 6
+   },
+   {
+    "date": "2026-11-05",
+    "commits": 7
+   },
+   {
+    "date": "2026-11-06",
+    "commits": 25
+   },
+   {
+    "date": "2026-11-07",
+    "commits": 41
+   },
+   {
+    "date": "2026-11-08",
+    "commits": 10
+   },
+   {
+    "date": "2026-11-13",
+    "commits": 8
+   },
+   {
+    "date": "2026-11-14",
+    "commits": 8
+   },
+   {
+    "date": "2026-11-15",
+    "commits": 3
+   },
+   {
+    "date": "2026-11-16",
+    "commits": 3
+   },
+   {
+    "date": "2026-11-17",
+    "commits": 2
+   },
+   {
+    "date": "2026-11-18",
+    "commits": 8
+   },
+   {
+    "date": "2026-11-19",
+    "commits": 5
+   }
+  ],
+  "totalCommits": 1886,
   "firstMonth": "2025-03",
-  "lastMonth": "2026-11"
+  "lastMonth": "2026-11",
+  "firstDay": "2025-03-17",
+  "lastDay": "2026-11-19"
  },
  "projects": [
   {
@@ -429,8 +659,8 @@
      "lines": 589
     }
    ],
-   "codeLines": 29432,
-   "treeLines": 31323,
+   "codeLines": 29444,
+   "treeLines": 31404,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1148,30 +1378,30 @@
    "url": "https://github.com/SENESO/mandarin-player",
    "visibility": "Private",
    "summary": "Mandarin — Android music player maintained by SENESO. Private alpha; GPL-3.0 and upstream credits preserved.",
-   "primaryLanguage": "Kotlin",
+   "primaryLanguage": "Dart",
    "topLanguages": [
     {
-     "name": "Kotlin",
-     "lines": 222464
-    },
-    {
-     "name": "C++",
-     "lines": 1573
-    },
-    {
      "name": "Python",
-     "lines": 693
+     "lines": 6054
+    },
+    {
+     "name": "Kotlin",
+     "lines": 5645
+    },
+    {
+     "name": "Swift",
+     "lines": 1744
     }
    ],
-   "codeLines": 225183,
-   "treeLines": 296117,
+   "codeLines": 15532,
+   "treeLines": 317973,
    "locSource": "github-clone",
-   "license": "GPL-3.0",
+   "license": null,
    "tests": null,
    "stars": 0,
    "forks": 0,
    "createdAt": "2026-10-20T08:03:12Z",
-   "updatedAt": "2026-10-20T09:41:01Z",
+   "updatedAt": "2026-11-18T20:14:52Z",
    "group": "private"
   },
   {
@@ -1412,19 +1642,19 @@
    "topLanguages": [
     {
      "name": "CSS",
-     "lines": 319
+     "lines": 403
     },
     {
      "name": "Python",
-     "lines": 303
+     "lines": 327
     },
     {
-     "name": "HTML",
-     "lines": 248
+     "name": "JavaScript",
+     "lines": 324
     }
    ],
-   "codeLines": 1087,
-   "treeLines": 2436,
+   "codeLines": 1321,
+   "treeLines": 3070,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
