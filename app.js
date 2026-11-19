@@ -101,6 +101,141 @@
       '<div class="rows">' + projects.map(rowFor).join('') + '</div></div>';
   }
 
+  function renderMonthly(stats) {
+    var board = document.getElementById('board');
+    if (board) board.style.display = 'none';
+    var fig = document.getElementById('monthly-chart');
+    if (fig) fig.hidden = false;
+    var byMonth = {};
+    stats.activity.monthlyCommits.forEach(function (m) { byMonth[m.month] = m.commits; });
+    var filled = [];
+    if (stats.activity.firstMonth && stats.activity.lastMonth) {
+      var cur = stats.activity.firstMonth.split('-').map(Number);
+      var end = stats.activity.lastMonth.split('-').map(Number);
+      while (cur[0] < end[0] || (cur[0] === end[0] && cur[1] <= end[1])) {
+        var key = cur[0] + '-' + String(cur[1]).padStart(2, '0');
+        filled.push({ month: key, commits: byMonth[key] || 0 });
+        cur[1]++; if (cur[1] === 13) { cur[1] = 1; cur[0]++; }
+      }
+    }
+    var months = filled.slice(-18);
+    var max = Math.max.apply(null, months.map(function (m) { return m.commits; }).concat([1]));
+    document.getElementById('chart').innerHTML = months.map(function (m) {
+      var h = Math.max(2, (m.commits / max) * 100);
+      return '<div class="chart__col" title="' + monthLabel(m.month) + ': ' + m.commits + ' commits">' +
+        '<div class="chart__bar" style="height:' + h + '%"></div>' +
+        '<span class="chart__label">' + monthLabel(m.month) + '</span></div>';
+    }).join('');
+    document.getElementById('chart-note').textContent =
+      fmt(stats.activity.totalCommits) + ' commits counted from ' +
+      monthLabel(stats.activity.firstMonth || '') + ' to ' +
+      monthLabel(stats.activity.lastMonth || '') +
+      ', across public repositories and local mirrors of the private ones.';
+  }
+
+  function renderBoard(stats) {
+    var byDay = {};
+    stats.activity.dailyCommits.forEach(function (d) { byDay[d.date] = d.commits; });
+
+    function parseDay(s) {
+      var p = s.split('-').map(Number);
+      return new Date(Date.UTC(p[0], p[1] - 1, p[2]));
+    }
+    function dayKey(d) {
+      return d.getUTCFullYear() + '-' +
+        String(d.getUTCMonth() + 1).padStart(2, '0') + '-' +
+        String(d.getUTCDate()).padStart(2, '0');
+    }
+    function fmtDay(d) {
+      return d.toLocaleDateString('en-GB',
+        { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+    }
+    var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    /* window: the last year, ending today, starting on a Sunday */
+    var now = new Date();
+    var end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+    var lastDay = stats.activity.lastDay ? parseDay(stats.activity.lastDay) : null;
+    if (lastDay && lastDay > end) end = lastDay;
+    var start = new Date(end.getTime() - 364 * 86400000);
+    start = new Date(start.getTime() - start.getUTCDay() * 86400000);
+    var weeks = Math.round((end - start) / 86400000 / 7) + 1;
+
+    /* level thresholds from the busiest day in the window */
+    var max = 1, totalYear = 0, activeDays = 0;
+    var probe = new Date(start);
+    while (probe <= end) {
+      var c0 = byDay[dayKey(probe)] || 0;
+      if (c0 > max) max = c0;
+      totalYear += c0;
+      if (c0 > 0) activeDays++;
+      probe = new Date(probe.getTime() + 86400000);
+    }
+    var t1 = Math.max(1, Math.ceil(max * 0.25));
+    var t2 = Math.max(t1 + 1, Math.ceil(max * 0.5));
+    var t3 = Math.max(t2 + 1, Math.ceil(max * 0.75));
+    function level(c) {
+      return c === 0 ? 0 : c <= t1 ? 1 : c <= t2 ? 2 : c <= t3 ? 3 : 4;
+    }
+
+    /* cells, column-major (weeks across, Sunday..Saturday down) + month labels */
+    var cells = '', monthLabels = [], prevMonth = -1;
+    for (var w = 0; w < weeks; w++) {
+      var sunday = new Date(start.getTime() + w * 7 * 86400000);
+      var mo = sunday.getUTCMonth();
+      if (mo !== prevMonth) { monthLabels.push({ col: w, name: MONTHS[mo] }); prevMonth = mo; }
+      for (var r = 0; r < 7; r++) {
+        var day = new Date(sunday.getTime() + r * 86400000);
+        if (day > end) { cells += '<i class="hm__cell hm__cell--future"></i>'; continue; }
+        var c = byDay[dayKey(day)] || 0;
+        var what = c === 0 ? 'No commits' : c === 1 ? '1 commit' : c + ' commits';
+        cells += '<i class="hm__cell lg' + level(c) + '" title="' +
+          what + ' on ' + fmtDay(day) + '"></i>';
+      }
+    }
+    var monthsHtml = monthLabels.map(function (m) {
+      return '<span class="hm__month" style="grid-column:' + (m.col + 1) + '">' + m.name + '</span>';
+    }).join('');
+    document.getElementById('heatmap').innerHTML =
+      '<div class="hm__months" style="--weeks:' + weeks + '">' + monthsHtml + '</div>' +
+      '<div class="hm__body">' +
+        '<div class="hm__days" aria-hidden="true"><span></span><span>Mon</span><span></span>' +
+          '<span>Wed</span><span></span><span>Fri</span><span></span></div>' +
+        '<div class="hm__grid" role="img" aria-label="Contribution graph for the last year">' +
+          cells + '</div>' +
+      '</div>';
+
+    /* streaks + busiest day across the full counted history */
+    var longest = 0, run = 0, busiest = null;
+    if (stats.activity.firstDay) {
+      var d = parseDay(stats.activity.firstDay);
+      while (d <= end) {
+        var cc = byDay[dayKey(d)] || 0;
+        run = cc > 0 ? run + 1 : 0;
+        if (run > longest) longest = run;
+        if (!busiest || cc > busiest.commits) busiest = { date: dayKey(d), commits: cc };
+        d = new Date(d.getTime() + 86400000);
+      }
+    }
+
+    document.getElementById('board-total').textContent = fmt(totalYear);
+    document.getElementById('board-stats').innerHTML =
+      '<span>Longest streak <strong>' + fmt(longest) + ' days</strong></span>' +
+      '<span>Active days <strong>' + fmt(activeDays) + '</strong></span>' +
+      (busiest && busiest.commits > 0
+        ? '<span>Busiest day <strong>' + fmt(busiest.commits) + ' commits</strong> · ' +
+          fmtDay(parseDay(busiest.date)) + '</span>' : '');
+    document.getElementById('board-note').textContent =
+      fmt(stats.activity.totalCommits) + ' commits counted from ' +
+      (stats.activity.firstDay ? fmtDay(parseDay(stats.activity.firstDay)) : '—') + ' to ' +
+      (stats.activity.lastDay ? fmtDay(parseDay(stats.activity.lastDay)) : '—') +
+      ', across public repositories and local mirrors of the private ones.';
+
+    /* on narrow screens the board scrolls sideways — start at the recent end */
+    var scroller = document.getElementById('board-scroll');
+    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+  }
+
   function render(stats) {
     /* stat band */
     document.querySelectorAll('[data-stat]').forEach(function (el) {
@@ -159,32 +294,13 @@
       '<div class="langtable__total"><span>Total</span><span>' +
         fmt(stats.totals.codeLines) + ' lines</span></div>';
 
-    /* activity chart — last 18 months, zero-filled */
-    var byMonth = {};
-    stats.activity.monthlyCommits.forEach(function (m) { byMonth[m.month] = m.commits; });
-    var filled = [];
-    if (stats.activity.firstMonth && stats.activity.lastMonth) {
-      var cur = stats.activity.firstMonth.split('-').map(Number);
-      var end = stats.activity.lastMonth.split('-').map(Number);
-      while (cur[0] < end[0] || (cur[0] === end[0] && cur[1] <= end[1])) {
-        var key = cur[0] + '-' + String(cur[1]).padStart(2, '0');
-        filled.push({ month: key, commits: byMonth[key] || 0 });
-        cur[1]++; if (cur[1] === 13) { cur[1] = 1; cur[0]++; }
-      }
+    /* activity — GitHub-style contribution board from daily data,
+       with the monthly bar chart as fallback for older data files */
+    if (stats.activity.dailyCommits && stats.activity.dailyCommits.length) {
+      renderBoard(stats);
+    } else {
+      renderMonthly(stats);
     }
-    var months = filled.slice(-18);
-    var max = Math.max.apply(null, months.map(function (m) { return m.commits; }).concat([1]));
-    document.getElementById('chart').innerHTML = months.map(function (m) {
-      var h = Math.max(2, (m.commits / max) * 100);
-      return '<div class="chart__col" title="' + monthLabel(m.month) + ': ' + m.commits + ' commits">' +
-        '<div class="chart__bar" style="height:' + h + '%"></div>' +
-        '<span class="chart__label">' + monthLabel(m.month) + '</span></div>';
-    }).join('');
-    document.getElementById('chart-note').textContent =
-      fmt(stats.activity.totalCommits) + ' commits counted from ' +
-      monthLabel(stats.activity.firstMonth || '') + ' to ' +
-      monthLabel(stats.activity.lastMonth || '') +
-      ', across public repositories and local mirrors of the private ones.';
 
     initReveal();
     animateCounters();

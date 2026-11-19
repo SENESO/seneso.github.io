@@ -10,7 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F4EDDF'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23A97F2F' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 
 <header class="topbar">
   <a class="topbar__brand" href="#top" aria-label="Eslam Ashraf Antar — home">
-    <span class="topbar__mark">E</span>
+    <span class="topbar__mark"><img src="assets/logo.png" alt="" width="512" height="512"></span>
     <span class="topbar__name">Eslam Ashraf Antar</span>
   </a>
   <nav class="topbar__nav" aria-label="Sections">
@@ -145,10 +146,29 @@
       <p class="section__no">04</p>
       <div>
         <h2 class="section__title">Activity</h2>
-        <p class="section__sub">Commits per month across all repositories, most recent eighteen months.</p>
+        <p class="section__sub">Contributions across all repositories — public and private —
+          counted day by day from the commit history, the way GitHub shows it.</p>
       </div>
     </header>
-    <figure class="chart" aria-label="Commits per month chart">
+
+    <div class="board" id="board">
+      <div class="board__head">
+        <p class="board__total"><strong id="board-total">—</strong>
+          <span>contributions in the last year</span></p>
+        <div class="board__stats" id="board-stats"></div>
+      </div>
+      <div class="board__scroll" id="board-scroll">
+        <div class="heatmap" id="heatmap"><!-- rendered from data/stats.json --></div>
+      </div>
+      <div class="board__foot">
+        <span class="board__note" id="board-note"></span>
+        <span class="board__legend" aria-hidden="true">Less
+          <i class="lg lg0"></i><i class="lg lg1"></i><i class="lg lg2"></i><i class="lg lg3"></i><i class="lg lg4"></i>
+          More</span>
+      </div>
+    </div>
+
+    <figure class="chart" id="monthly-chart" hidden aria-label="Commits per month chart">
       <div class="chart__plot" id="chart"><!-- rendered from data/stats.json --></div>
       <figcaption class="chart__note" id="chart-note"></figcaption>
     </figure>
@@ -241,6 +261,7 @@
 
 <footer class="footer">
   <div class="footer__inner">
+    <img class="footer__logo" src="assets/logo.png" alt="Eslam Ashraf Antar — personal logo" width="512" height="512">
     <p class="footer__name">Eslam Ashraf Antar</p>
     <p class="footer__line">Backend Developer · C# / .NET · Cairo, Egypt</p>
     <div class="socials socials--footer">

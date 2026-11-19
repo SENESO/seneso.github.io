@@ -169,6 +169,25 @@ def git_months(root):
         return {}
 
 
+def git_days(root):
+    """{YYYY-MM-DD: commit count} for commits authored by the owner.
+    Feeds the GitHub-style contribution heatmap on the site."""
+    try:
+        cmd = ['git', '-C', root, 'log', '--all', '--format=%ad',
+               '--date=format:%Y-%m-%d']
+        for a in AUTHORS:
+            cmd.append(f'--author={a}')
+        out = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+        days = {}
+        for line in out.stdout.splitlines():
+            line = line.strip()
+            if re.fullmatch(r'\d{4}-\d{2}-\d{2}', line):
+                days[line] = days.get(line, 0) + 1
+        return days
+    except Exception:
+        return {}
+
+
 def fetch_repos_api(token):
     repos, page = [], 1
     while True:
@@ -226,7 +245,7 @@ def main():
         tmp_clones = tempfile.mkdtemp(prefix='stats-clones-')
         clones_dir = tmp_clones
 
-    projects, lang_total, activity = [], {}, {}
+    projects, lang_total, activity, activity_days = [], {}, {}, {}
     total_loc = 0
     for repo in sorted(repos, key=lambda r: r['name'].lower()):
         name = repo['name']
@@ -247,7 +266,7 @@ def main():
                 git_path = loc_path
             except Exception:
                 loc_path = None
-        langs, months, license_ = {}, {}, None
+        langs, months, days, license_ = {}, {}, {}, None
         tree_lines = None
         if loc_path and os.path.isdir(loc_path):
             langs = count_tree(loc_path, EXTRA_EXCLUDE_DIRS.get(name, ()))
@@ -255,6 +274,7 @@ def main():
             license_ = detect_license(loc_path)
             if git_path and os.path.isdir(os.path.join(git_path, '.git')):
                 months = git_months(git_path)
+                days = git_days(git_path)
         else:
             loc_source = 'unavailable'
         code_lines = sum(langs.values())
@@ -264,6 +284,8 @@ def main():
                 lang_total[k] = lang_total.get(k, 0) + v
             for k, v in months.items():
                 activity[k] = activity.get(k, 0) + v
+            for k, v in days.items():
+                activity_days[k] = activity_days.get(k, 0) + v
         top = sorted(langs.items(), key=lambda kv: -kv[1])[:3]
         feat = FEATURED.get(name, {})
         summary = repo.get('description') or SUMMARY_OVERRIDES.get(name) or ''
@@ -293,6 +315,7 @@ def main():
                   'pct': round(100.0 * v / total_loc, 1) if total_loc else 0}
                  for k, v in sorted(lang_total.items(), key=lambda kv: -kv[1])]
     months_sorted = sorted(activity.items())
+    days_sorted = sorted(activity_days.items())
     stats = {
         'generatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'owner': OWNER,
@@ -307,9 +330,12 @@ def main():
         'languages': languages,
         'activity': {
             'monthlyCommits': [{'month': m, 'commits': c} for m, c in months_sorted],
+            'dailyCommits': [{'date': d, 'commits': c} for d, c in days_sorted],
             'totalCommits': sum(activity.values()),
             'firstMonth': months_sorted[0][0] if months_sorted else None,
             'lastMonth': months_sorted[-1][0] if months_sorted else None,
+            'firstDay': days_sorted[0][0] if days_sorted else None,
+            'lastDay': days_sorted[-1][0] if days_sorted else None,
         },
         'projects': projects,
     }
