@@ -362,11 +362,59 @@
     }, 2500);
   }
 
-  /* header scrollspy — highlight the nav link of the section in view */
-  var spyLinks = document.querySelectorAll('.topbar__nav a[href^="#"]');
+  /* header menu — toggle the dropdown; close on link click, outside
+     click, or Escape */
+  var menuBtn = document.querySelector('.topbar__menu-btn');
+  var menu = document.getElementById('topbar-menu');
+  if (menuBtn && menu) {
+    var hideTimer = null;
+    var closeMenu = function () {
+      if (menu.hidden) return;
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      menu.classList.add('is-closing');
+      hideTimer = setTimeout(function () {
+        menu.hidden = true;
+        menu.classList.remove('is-closing');
+        hideTimer = null;
+      }, 190);
+    };
+    var openMenu = function () {
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      menu.classList.remove('is-closing');
+      menu.hidden = false;
+      void menu.offsetWidth; /* restart the entrance animation on rapid re-open */
+      menu.classList.add('is-open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menuBtn.classList.add('is-open');
+    };
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (menu.hidden || menu.classList.contains('is-closing')) { openMenu(); }
+      else { closeMenu(); }
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.hidden && !menu.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  /* header scrollspy — highlight the link of the section in view, in
+     both the wide-screen nav and the small-screen menu */
+  var spyLinks = document.querySelectorAll(
+    '.topbar__nav a[href^="#"], .topbar__menu a[href^="#"]');
   if ('IntersectionObserver' in window && spyLinks.length) {
     var spyById = {};
-    spyLinks.forEach(function (a) { spyById[a.getAttribute('href').slice(1)] = a; });
+    spyLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      (spyById[id] = spyById[id] || []).push(a);
+    });
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -374,11 +422,10 @@
           a.classList.remove('is-active');
           a.removeAttribute('aria-current');
         });
-        var link = spyById[en.target.id];
-        if (link) {
+        (spyById[en.target.id] || []).forEach(function (link) {
           link.classList.add('is-active');
           link.setAttribute('aria-current', 'true');
-        }
+        });
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
     Object.keys(spyById).forEach(function (id) {
