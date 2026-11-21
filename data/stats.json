@@ -1,19 +1,19 @@
 {
- "generatedAt": "2026-11-21T07:08:31Z",
+ "generatedAt": "2026-11-21T19:16:10Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 61,
-  "public": 54,
+  "repositories": 62,
+  "public": 55,
   "private": 7,
-  "codeLines": 3380119,
-  "commits": 1903,
+  "codeLines": 3383531,
+  "commits": 1909,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2447191,
+   "lines": 2450522,
    "pct": 72.4
   },
   {
@@ -103,7 +103,7 @@
   },
   {
    "name": "XAML",
-   "lines": 1331,
+   "lines": 1412,
    "pct": 0.0
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 143
+    "commits": 149
    }
   ],
   "dailyCommits": [
@@ -376,14 +376,18 @@
    },
    {
     "date": "2026-11-20",
-    "commits": 11
+    "commits": 13
+   },
+   {
+    "date": "2026-11-21",
+    "commits": 4
    }
   ],
-  "totalCommits": 1903,
+  "totalCommits": 1909,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
-  "lastDay": "2026-11-20"
+  "lastDay": "2026-11-21"
  },
  "projects": [
   {
@@ -653,7 +657,7 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 29265
+     "lines": 30809
     },
     {
      "name": "HTML",
@@ -664,8 +668,8 @@
      "lines": 695
     }
    ],
-   "codeLines": 34532,
-   "treeLines": 39828,
+   "codeLines": 36157,
+   "treeLines": 41672,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1694,6 +1698,29 @@
    "forks": 0,
    "createdAt": "2025-04-11T12:49:42Z",
    "updatedAt": "2026-10-08T12:08:40Z",
+   "group": "library"
+  },
+  {
+   "name": "spaced-repetition-trainer",
+   "url": "https://github.com/SENESO/spaced-repetition-trainer",
+   "visibility": "Public",
+   "summary": "A spaced repetition flashcard trainer built with .NET 8 — SM-2 scheduling, decks, review sessions and statistics. Solution to Coding Challenge #147.",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 1787
+    }
+   ],
+   "codeLines": 1787,
+   "treeLines": 2059,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-21T09:48:03Z",
+   "updatedAt": "2026-11-21T09:57:09Z",
    "group": "library"
   },
   {
