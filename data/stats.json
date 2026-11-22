@@ -1,20 +1,20 @@
 {
- "generatedAt": "2026-11-22T06:49:05Z",
+ "generatedAt": "2026-11-22T19:41:18Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 62,
-  "public": 55,
+  "repositories": 63,
+  "public": 56,
   "private": 7,
-  "codeLines": 3383531,
-  "commits": 1909,
+  "codeLines": 3392776,
+  "commits": 1922,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2450522,
-   "pct": 72.4
+   "lines": 2458938,
+   "pct": 72.5
   },
   {
    "name": "Rust",
@@ -58,7 +58,7 @@
   },
   {
    "name": "PowerShell",
-   "lines": 24912,
+   "lines": 25012,
    "pct": 0.7
   },
   {
@@ -68,7 +68,7 @@
   },
   {
    "name": "HTML",
-   "lines": 13276,
+   "lines": 13840,
    "pct": 0.4
   },
   {
@@ -83,7 +83,7 @@
   },
   {
    "name": "Shell",
-   "lines": 7950,
+   "lines": 8015,
    "pct": 0.2
   },
   {
@@ -103,7 +103,7 @@
   },
   {
    "name": "XAML",
-   "lines": 1412,
+   "lines": 1512,
    "pct": 0.0
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 149
+    "commits": 162
    }
   ],
   "dailyCommits": [
@@ -381,13 +381,17 @@
    {
     "date": "2026-11-21",
     "commits": 4
+   },
+   {
+    "date": "2026-11-22",
+    "commits": 13
    }
   ],
-  "totalCommits": 1909,
+  "totalCommits": 1922,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
-  "lastDay": "2026-11-21"
+  "lastDay": "2026-11-22"
  },
  "projects": [
   {
@@ -657,19 +661,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 30809
+     "lines": 38375
     },
     {
      "name": "HTML",
-     "lines": 2654
+     "lines": 3218
     },
     {
-     "name": "Python",
-     "lines": 695
+     "name": "XAML",
+     "lines": 713
     }
    ],
-   "codeLines": 36157,
-   "treeLines": 41672,
+   "codeLines": 44552,
+   "treeLines": 50345,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -896,6 +900,29 @@
    "forks": 0,
    "createdAt": "2026-11-17T16:28:52Z",
    "updatedAt": "2026-11-17T16:28:54Z",
+   "group": "course"
+  },
+  {
+   "name": "G-NET-91-EF04",
+   "url": "https://github.com/SENESO/G-NET-91-EF04",
+   "visibility": "Public",
+   "summary": "",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 850
+    }
+   ],
+   "codeLines": 850,
+   "treeLines": 1945,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-22T13:29:36Z",
+   "updatedAt": "2026-11-22T13:47:13Z",
    "group": "course"
   },
   {
