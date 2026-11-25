@@ -1,45 +1,45 @@
 {
- "generatedAt": "2026-11-24T22:27:49Z",
+ "generatedAt": "2026-11-25T08:34:54Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 63,
-  "public": 56,
+  "repositories": 65,
+  "public": 58,
   "private": 7,
-  "codeLines": 3396238,
-  "commits": 1926,
+  "codeLines": 3445988,
+  "commits": 1997,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2462375,
-   "pct": 72.5
+   "lines": 2510056,
+   "pct": 72.8
   },
   {
    "name": "Rust",
    "lines": 242811,
-   "pct": 7.1
+   "pct": 7.0
   },
   {
    "name": "TypeScript",
-   "lines": 158184,
-   "pct": 4.7
+   "lines": 159833,
+   "pct": 4.6
   },
   {
    "name": "C++",
    "lines": 141129,
-   "pct": 4.2
+   "pct": 4.1
   },
   {
    "name": "PHP",
    "lines": 70482,
-   "pct": 2.1
+   "pct": 2.0
   },
   {
    "name": "C/C++ Header",
    "lines": 69972,
-   "pct": 2.1
+   "pct": 2.0
   },
   {
    "name": "Python",
@@ -48,7 +48,7 @@
   },
   {
    "name": "JavaScript",
-   "lines": 45192,
+   "lines": 45337,
    "pct": 1.3
   },
   {
@@ -63,12 +63,12 @@
   },
   {
    "name": "CSS",
-   "lines": 14581,
+   "lines": 14797,
    "pct": 0.4
   },
   {
    "name": "HTML",
-   "lines": 13840,
+   "lines": 13843,
    "pct": 0.4
   },
   {
@@ -83,7 +83,7 @@
   },
   {
    "name": "Shell",
-   "lines": 8015,
+   "lines": 8048,
    "pct": 0.2
   },
   {
@@ -108,7 +108,7 @@
   },
   {
    "name": "Batch",
-   "lines": 1085,
+   "lines": 1108,
    "pct": 0.0
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 166
+    "commits": 237
    }
   ],
   "dailyCommits": [
@@ -389,13 +389,17 @@
    {
     "date": "2026-11-23",
     "commits": 2
+   },
+   {
+    "date": "2026-11-25",
+    "commits": 71
    }
   ],
-  "totalCommits": 1926,
+  "totalCommits": 1997,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
-  "lastDay": "2026-11-23"
+  "lastDay": "2026-11-25"
  },
  "projects": [
   {
@@ -581,6 +585,37 @@
    "forks": 0,
    "createdAt": "2026-10-08T16:43:37Z",
    "updatedAt": "2026-10-08T16:43:38Z",
+   "group": "library"
+  },
+  {
+   "name": "DapperAOT",
+   "url": "https://github.com/SENESO/DapperAOT",
+   "visibility": "Public",
+   "summary": "Build time tools in the flavor of Dapper",
+   "primaryLanguage": null,
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 45539
+    },
+    {
+     "name": "Batch",
+     "lines": 23
+    },
+    {
+     "name": "HTML",
+     "lines": 3
+    }
+   ],
+   "codeLines": 45565,
+   "treeLines": 51615,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-24T22:36:30Z",
+   "updatedAt": "2026-11-24T22:36:31Z",
    "group": "library"
   },
   {
@@ -1391,19 +1426,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 92591
+     "lines": 93178
     },
     {
      "name": "TypeScript",
-     "lines": 72889
+     "lines": 74538
     },
     {
      "name": "JavaScript",
-     "lines": 24002
+     "lines": 24147
     }
    ],
-   "codeLines": 192921,
-   "treeLines": 433570,
+   "codeLines": 195551,
+   "treeLines": 450008,
    "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
@@ -1484,6 +1519,29 @@
    "createdAt": "2026-11-07T12:37:06Z",
    "updatedAt": "2026-11-07T14:01:57Z",
    "group": "featured"
+  },
+  {
+   "name": "message-queue-csharp",
+   "url": "https://github.com/SENESO/message-queue-csharp",
+   "visibility": "Public",
+   "summary": "A log-based message queue built from scratch in C# (.NET 8) - segmented append-only log, partitions, consumer groups, binary TCP protocol. Build-your-own-Kafka.",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 1555
+    }
+   ],
+   "codeLines": 1555,
+   "treeLines": 1786,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-24T23:01:47Z",
+   "updatedAt": "2026-11-24T23:02:25Z",
+   "group": "library"
   },
   {
    "name": "NetSparkle",
@@ -1663,7 +1721,7 @@
    "primaryLanguage": null,
    "topLanguages": [],
    "codeLines": 0,
-   "treeLines": 71,
+   "treeLines": 44,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
