@@ -1,19 +1,19 @@
 {
- "generatedAt": "2026-11-25T08:34:54Z",
+ "generatedAt": "2026-11-25T21:42:57Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 65,
-  "public": 58,
+  "repositories": 73,
+  "public": 66,
   "private": 7,
-  "codeLines": 3445988,
-  "commits": 1997,
+  "codeLines": 3453324,
+  "commits": 2134,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2510056,
+   "lines": 2515276,
    "pct": 72.8
   },
   {
@@ -23,7 +23,7 @@
   },
   {
    "name": "TypeScript",
-   "lines": 159833,
+   "lines": 160569,
    "pct": 4.6
   },
   {
@@ -48,7 +48,7 @@
   },
   {
    "name": "JavaScript",
-   "lines": 45337,
+   "lines": 46264,
    "pct": 1.3
   },
   {
@@ -63,12 +63,12 @@
   },
   {
    "name": "CSS",
-   "lines": 14797,
+   "lines": 15086,
    "pct": 0.4
   },
   {
    "name": "HTML",
-   "lines": 13843,
+   "lines": 14007,
    "pct": 0.4
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 237
+    "commits": 374
    }
   ],
   "dailyCommits": [
@@ -392,16 +392,39 @@
    },
    {
     "date": "2026-11-25",
-    "commits": 71
+    "commits": 208
    }
   ],
-  "totalCommits": 1997,
+  "totalCommits": 2134,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
   "lastDay": "2026-11-25"
  },
  "projects": [
+  {
+   "name": "agaza",
+   "url": "https://github.com/SENESO/agaza",
+   "visibility": "Public",
+   "summary": "Egyptian public holidays for .NET: national days, Coptic Easter and Sham El-Nessim by computus, and Hijri-based Islamic holidays — bilingual EN/AR",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 264
+    }
+   ],
+   "codeLines": 264,
+   "treeLines": 421,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T11:59:56Z",
+   "updatedAt": "2026-11-25T12:00:09Z",
+   "group": "library"
+  },
   {
    "name": "aspnetcore",
    "url": "https://github.com/SENESO/aspnetcore",
@@ -534,6 +557,29 @@
    "group": "private"
   },
   {
+   "name": "cron-csharp",
+   "url": "https://github.com/SENESO/cron-csharp",
+   "visibility": "Public",
+   "summary": "Cron expressions for .NET: parse the classic 5-field format and compute next occurrences with explicit DST behavior",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 407
+    }
+   ],
+   "codeLines": 407,
+   "treeLines": 576,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T12:28:43Z",
+   "updatedAt": "2026-11-25T12:29:00Z",
+   "group": "library"
+  },
+  {
    "name": "csharp-design-patterns",
    "url": "https://github.com/SENESO/csharp-design-patterns",
    "visibility": "Public",
@@ -635,7 +681,7 @@
     }
    ],
    "codeLines": 10663,
-   "treeLines": 11673,
+   "treeLines": 11703,
    "locSource": "github-clone",
    "license": "Apache-2.0",
    "tests": 524,
@@ -743,6 +789,29 @@
    "forks": 0,
    "createdAt": "2026-10-08T12:43:45Z",
    "updatedAt": "2026-10-13T22:43:45Z",
+   "group": "library"
+  },
+  {
+   "name": "farq",
+   "url": "https://github.com/SENESO/farq",
+   "visibility": "Public",
+   "summary": "Line-based diff and patch for .NET: Myers O(ND) edit script, unified diff formatting, exact patch application",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 525
+    }
+   ],
+   "codeLines": 525,
+   "treeLines": 681,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T13:08:21Z",
+   "updatedAt": "2026-11-25T13:08:35Z",
    "group": "library"
   },
   {
@@ -1395,6 +1464,37 @@
    "group": "library"
   },
   {
+   "name": "khan-store",
+   "url": "https://github.com/SENESO/khan-store",
+   "visibility": "Public",
+   "summary": "Egyptian e-commerce store (ASP.NET Core + React) on Paymob.Net - the Paymob SDK reference implementation",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 615
+    },
+    {
+     "name": "JavaScript",
+     "lines": 313
+    },
+    {
+     "name": "CSS",
+     "lines": 76
+    }
+   ],
+   "codeLines": 1031,
+   "treeLines": 2762,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T10:13:00Z",
+   "updatedAt": "2026-11-25T10:13:12Z",
+   "group": "library"
+  },
+  {
    "name": "lsm-storage-engine",
    "url": "https://github.com/SENESO/lsm-storage-engine",
    "visibility": "Public",
@@ -1407,7 +1507,7 @@
     }
    ],
    "codeLines": 6319,
-   "treeLines": 7039,
+   "treeLines": 7057,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 117,
@@ -1418,6 +1518,37 @@
    "group": "featured"
   },
   {
+   "name": "majlis",
+   "url": "https://github.com/SENESO/majlis",
+   "visibility": "Public",
+   "summary": "Realtime collaborative board (ASP.NET Core + React) over raw WebSockets - presence, ops, Lamport clock",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 604
+    },
+    {
+     "name": "JavaScript",
+     "lines": 339
+    },
+    {
+     "name": "CSS",
+     "lines": 114
+    }
+   ],
+   "codeLines": 1084,
+   "treeLines": 2996,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T10:25:59Z",
+   "updatedAt": "2026-11-25T10:26:18Z",
+   "group": "library"
+  },
+  {
    "name": "mandarin",
    "url": "https://github.com/SENESO/mandarin",
    "visibility": "Private",
@@ -1426,19 +1557,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 93178
+     "lines": 94786
     },
     {
      "name": "TypeScript",
-     "lines": 74538
+     "lines": 75274
     },
     {
      "name": "JavaScript",
-     "lines": 24147
+     "lines": 24218
     }
    ],
-   "codeLines": 195551,
-   "treeLines": 450008,
+   "codeLines": 198002,
+   "treeLines": 482321,
    "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
@@ -1510,7 +1641,7 @@
     }
    ],
    "codeLines": 2153,
-   "treeLines": 2699,
+   "treeLines": 2717,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 66,
@@ -1533,7 +1664,7 @@
     }
    ],
    "codeLines": 1555,
-   "treeLines": 1786,
+   "treeLines": 1807,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1541,6 +1672,37 @@
    "forks": 0,
    "createdAt": "2026-11-24T23:01:47Z",
    "updatedAt": "2026-11-24T23:02:25Z",
+   "group": "library"
+  },
+  {
+   "name": "nabd",
+   "url": "https://github.com/SENESO/nabd",
+   "visibility": "Public",
+   "summary": "Self-hosted uptime monitor: scheduled probes, 24h uptime, latency sparklines (ASP.NET Core + React + SQLite)",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 452
+    },
+    {
+     "name": "JavaScript",
+     "lines": 204
+    },
+    {
+     "name": "CSS",
+     "lines": 63
+    }
+   ],
+   "codeLines": 746,
+   "treeLines": 2659,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T10:33:22Z",
+   "updatedAt": "2026-11-25T10:33:38Z",
    "group": "library"
   },
   {
@@ -1618,7 +1780,7 @@
     }
    ],
    "codeLines": 1344,
-   "treeLines": 7081,
+   "treeLines": 8625,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": null,
@@ -1660,6 +1822,56 @@
    "group": "library"
   },
   {
+   "name": "qasir",
+   "url": "https://github.com/SENESO/qasir",
+   "visibility": "Public",
+   "summary": "Self-hosted URL shortener in C#: base62 codes from the database sequence, hit counting, one Sqlite file",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 250
+    },
+    {
+     "name": "HTML",
+     "lines": 83
+    }
+   ],
+   "codeLines": 333,
+   "treeLines": 470,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T12:49:17Z",
+   "updatedAt": "2026-11-25T12:49:33Z",
+   "group": "library"
+  },
+  {
+   "name": "rate-limiter-csharp",
+   "url": "https://github.com/SENESO/rate-limiter-csharp",
+   "visibility": "Public",
+   "summary": "Thread-safe, dependency-free rate limiters for .NET: token bucket and sliding window log with an injectable clock",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 495
+    }
+   ],
+   "codeLines": 495,
+   "treeLines": 677,
+   "locSource": "github-clone",
+   "license": "MIT",
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-25T11:55:56Z",
+   "updatedAt": "2026-11-25T11:56:09Z",
+   "group": "library"
+  },
+  {
    "name": "redis-csharp",
    "url": "https://github.com/SENESO/redis-csharp",
    "visibility": "Public",
@@ -1680,7 +1892,7 @@
     }
    ],
    "codeLines": 13961,
-   "treeLines": 14640,
+   "treeLines": 14658,
    "locSource": "github-clone",
    "license": "MIT",
    "tests": 219,
@@ -1752,7 +1964,7 @@
     }
    ],
    "codeLines": 1553,
-   "treeLines": 3637,
+   "treeLines": 3695,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
