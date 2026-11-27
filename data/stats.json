@@ -1,19 +1,19 @@
 {
- "generatedAt": "2026-11-27T08:34:19Z",
+ "generatedAt": "2026-11-27T21:18:27Z",
  "owner": "SENESO",
  "totals": {
   "repositories": 73,
   "public": 66,
   "private": 7,
-  "codeLines": 3456677,
-  "commits": 2272,
+  "codeLines": 3458788,
+  "commits": 2352,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2516795,
+   "lines": 2517269,
    "pct": 72.8
   },
   {
@@ -23,7 +23,7 @@
   },
   {
    "name": "TypeScript",
-   "lines": 162227,
+   "lines": 163859,
    "pct": 4.7
   },
   {
@@ -63,7 +63,7 @@
   },
   {
    "name": "CSS",
-   "lines": 15169,
+   "lines": 15174,
    "pct": 0.4
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 512
+    "commits": 592
    }
   ],
   "dailyCommits": [
@@ -400,10 +400,10 @@
    },
    {
     "date": "2026-11-27",
-    "commits": 20
+    "commits": 100
    }
   ],
-  "totalCommits": 2272,
+  "totalCommits": 2352,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
@@ -1565,19 +1565,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 96305
+     "lines": 96779
     },
     {
      "name": "TypeScript",
-     "lines": 76932
+     "lines": 78564
     },
     {
      "name": "JavaScript",
      "lines": 24314
     }
    ],
-   "codeLines": 201355,
-   "treeLines": 486034,
+   "codeLines": 203466,
+   "treeLines": 488445,
    "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
@@ -1972,7 +1972,7 @@
     }
    ],
    "codeLines": 1553,
-   "treeLines": 3911,
+   "treeLines": 3915,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
