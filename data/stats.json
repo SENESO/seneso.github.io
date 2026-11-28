@@ -1,30 +1,30 @@
 {
- "generatedAt": "2026-11-28T07:49:35Z",
+ "generatedAt": "2026-11-28T20:03:24Z",
  "owner": "SENESO",
  "totals": {
   "repositories": 74,
   "public": 67,
   "private": 7,
-  "codeLines": 3456415,
-  "commits": 2460,
+  "codeLines": 3435882,
+  "commits": 2602,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2518096,
-   "pct": 72.9
+   "lines": 2510137,
+   "pct": 73.1
   },
   {
    "name": "Rust",
    "lines": 242811,
-   "pct": 7.0
+   "pct": 7.1
   },
   {
    "name": "TypeScript",
-   "lines": 160563,
-   "pct": 4.6
+   "lines": 151964,
+   "pct": 4.4
   },
   {
    "name": "C++",
@@ -34,7 +34,7 @@
   {
    "name": "PHP",
    "lines": 70482,
-   "pct": 2.0
+   "pct": 2.1
   },
   {
    "name": "C/C++ Header",
@@ -47,14 +47,14 @@
    "pct": 1.8
   },
   {
-   "name": "JavaScript",
-   "lines": 46361,
-   "pct": 1.3
-  },
-  {
    "name": "Razor",
    "lines": 44909,
    "pct": 1.3
+  },
+  {
+   "name": "JavaScript",
+   "lines": 42721,
+   "pct": 1.2
   },
   {
    "name": "PowerShell",
@@ -63,12 +63,12 @@
   },
   {
    "name": "CSS",
-   "lines": 15191,
+   "lines": 15216,
    "pct": 0.4
   },
   {
    "name": "HTML",
-   "lines": 14004,
+   "lines": 13644,
    "pct": 0.4
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 700
+    "commits": 842
    }
   ],
   "dailyCommits": [
@@ -404,10 +404,10 @@
    },
    {
     "date": "2026-11-28",
-    "commits": 78
+    "commits": 220
    }
   ],
-  "totalCommits": 2460,
+  "totalCommits": 2602,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
@@ -1600,19 +1600,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 97512
+     "lines": 89553
     },
     {
      "name": "TypeScript",
-     "lines": 75268
+     "lines": 66669
     },
     {
      "name": "JavaScript",
-     "lines": 24314
+     "lines": 20674
     }
    ],
-   "codeLines": 200908,
-   "treeLines": 486422,
+   "codeLines": 180375,
+   "treeLines": 502698,
    "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
@@ -2007,7 +2007,7 @@
     }
    ],
    "codeLines": 1553,
-   "treeLines": 3915,
+   "treeLines": 3950,
    "locSource": "github-clone",
    "license": null,
    "tests": null,
