@@ -1,20 +1,20 @@
 {
- "generatedAt": "2026-11-27T21:18:27Z",
+ "generatedAt": "2026-11-28T07:49:35Z",
  "owner": "SENESO",
  "totals": {
-  "repositories": 73,
-  "public": 66,
+  "repositories": 74,
+  "public": 67,
   "private": 7,
-  "codeLines": 3458788,
-  "commits": 2352,
+  "codeLines": 3456415,
+  "commits": 2460,
   "languages": 22,
   "mergedPRs": 5
  },
  "languages": [
   {
    "name": "C#",
-   "lines": 2517269,
-   "pct": 72.8
+   "lines": 2518096,
+   "pct": 72.9
   },
   {
    "name": "Rust",
@@ -23,8 +23,8 @@
   },
   {
    "name": "TypeScript",
-   "lines": 163859,
-   "pct": 4.7
+   "lines": 160563,
+   "pct": 4.6
   },
   {
    "name": "C++",
@@ -48,12 +48,12 @@
   },
   {
    "name": "JavaScript",
-   "lines": 46360,
+   "lines": 46361,
    "pct": 1.3
   },
   {
    "name": "Razor",
-   "lines": 44831,
+   "lines": 44909,
    "pct": 1.3
   },
   {
@@ -63,7 +63,7 @@
   },
   {
    "name": "CSS",
-   "lines": 15174,
+   "lines": 15191,
    "pct": 0.4
   },
   {
@@ -154,7 +154,7 @@
    },
    {
     "month": "2026-11",
-    "commits": 592
+    "commits": 700
    }
   ],
   "dailyCommits": [
@@ -400,14 +400,18 @@
    },
    {
     "date": "2026-11-27",
-    "commits": 100
+    "commits": 130
+   },
+   {
+    "date": "2026-11-28",
+    "commits": 78
    }
   ],
-  "totalCommits": 2352,
+  "totalCommits": 2460,
   "firstMonth": "2025-03",
   "lastMonth": "2026-11",
   "firstDay": "2025-03-17",
-  "lastDay": "2026-11-27"
+  "lastDay": "2026-11-28"
  },
  "projects": [
   {
@@ -1088,6 +1092,37 @@
    "group": "course"
   },
   {
+   "name": "G-NET-91-MVC01",
+   "url": "https://github.com/SENESO/G-NET-91-MVC01",
+   "visibility": "Public",
+   "summary": "",
+   "primaryLanguage": "C#",
+   "topLanguages": [
+    {
+     "name": "C#",
+     "lines": 94
+    },
+    {
+     "name": "Razor",
+     "lines": 78
+    },
+    {
+     "name": "CSS",
+     "lines": 12
+    }
+   ],
+   "codeLines": 185,
+   "treeLines": 222,
+   "locSource": "github-clone",
+   "license": null,
+   "tests": null,
+   "stars": 0,
+   "forks": 0,
+   "createdAt": "2026-11-28T03:47:40Z",
+   "updatedAt": "2026-11-28T03:51:44Z",
+   "group": "course"
+  },
+  {
    "name": "G-NET97-ADVC-Assignment-1",
    "url": "https://github.com/SENESO/G-NET97-ADVC-Assignment-1",
    "visibility": "Public",
@@ -1565,19 +1600,19 @@
    "topLanguages": [
     {
      "name": "C#",
-     "lines": 96779
+     "lines": 97512
     },
     {
      "name": "TypeScript",
-     "lines": 78564
+     "lines": 75268
     },
     {
      "name": "JavaScript",
      "lines": 24314
     }
    ],
-   "codeLines": 203466,
-   "treeLines": 488445,
+   "codeLines": 200908,
+   "treeLines": 486422,
    "locSource": "github-clone",
    "license": "See LICENSE",
    "tests": null,
